@@ -1,0 +1,31 @@
+CARVISTA AI - ADMIN LOGIN SETUP
+================================
+
+1. Keep app.py in the same folder as your existing carvista.db, final_data.csv, and model.pkl.
+   Do NOT delete or replace your existing carvista.db; it contains your registered users and history.
+
+2. In the same project folder, create a folder named:
+   .streamlit
+
+3. Inside .streamlit, create a file named:
+   secrets.toml
+
+4. Put these two lines in secrets.toml and change the example password to your own strong password:
+
+   admin_username = "admin"
+   admin_password = "ChangeThisToAStrongPassword!"
+
+5. Open Command Prompt in the project folder and run:
+   pip install -r requirements.txt
+   streamlit run app.py
+
+6. In the app's sidebar, click "Admin Login" and use the credentials you put in secrets.toml.
+   The Admin Dashboard displays visitor sessions, registered users, successful login history,
+   all saved car predictions, and page views.
+
+Important notes:
+- Keep .streamlit/secrets.toml private. Never upload it to GitHub or share it publicly.
+- Visitor Sessions counts Streamlit browser sessions, not guaranteed unique people or reliable page analytics.
+- This is local SQLite tracking. If you deploy multiple app instances or want production analytics,
+  use a shared database and a proper analytics/consent setup.
+- Existing users' login/password data are not displayed in the admin dashboard.
